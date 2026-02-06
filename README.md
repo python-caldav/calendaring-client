@@ -6,7 +6,7 @@ The name of the library is not yet set in stone.  I thought of "calendar-client"
 
 I've been the maintainer of the Python CalDAV client package for many years now.  The ironic thing is that I started using the library because I "didn't want to get my hands dirty".  I had to do some fixes for the library to work towards my server, and soon enough the owner of the project passed me the maintainer hat.  To be honest, I think neither the CalDAV protocol nor the iCalendar format is particuarly good standards.  They are sort of the only open standards we have, so it's important to support them, but it's also important to support new and emerging standards.
 
-As far as I know (TODO: do more research into this), iCalendar is also the only standard applicable for task lists - but it's not a very good standard for it.  Like, there is no good way to attach time estimates to the tasks.
+There exists no good standards for tasks.  There are some industry standards, except for that the iCalendar standard offers support for task lists, but it's not a very good standard for it.  For instance, it's not very clear how to add information about time estimates and time spent on a task.
 
 ## What is it (going to be)?
 
@@ -16,15 +16,17 @@ This is intended to be a general python client for accessing task and calendarin
 
 Today one may have to choose different libraries for fetching calendaring information from different kinds of software.  I think it's important to have a "swiss army knife"-library for accessing calendars - one should not have to use different libraries for different calendar providers.  I'd like to support other standards in the CalDAV library, but it's a bit outside the scope for that library.
 
-## Other backends and protocols that will be prioritized
+## Backends to be supported
 
+* CalDAV, certainly.  It's (IMO) not a very good standard, but it is sort of the only standard for distributing and updating calendaring information.
 * Support for "iCalendar feeds": It has become quite normal to offer users access to calendar data through iCalendar links.  It's much simpler than CalDAV, but offers less features.  Already several years ago I got requests from people wanting support for iCalendar feeds in the CalDAV library.  I think in the end I rejected it for being outside the scope of the CalDAV library.  It should be very simple to detect if a link is an iCalendar feed.  I split out an icalendar-searcher library while refactoring the CalDAV library - with this library it's possible to do client-side filtering and have a search-function that behaves the same towards CalDAV servers and an iCalendar feed.
 * Support for local data files (.ical or .ics).  Those can be edited too.  The library should simply offer an API that works the same, regardless of weather the client is used towards a remote calendar server or towards a local selection of ical-files.
-* Many mail systems comes bundled with calendar systems, and can interoperate with other systems by sending iCal data as email attachments.  The library should support sending iCal data as email attachments
+* Many mail systems comes bundled with calendar systems, and can interoperate with other systems by sending iCal data as email attachments.  The library should support sending iCal data as email attachments.  Perhaps even support accessing mailboxes through JMAP and/or IMAP.
 * I've been playing a bit with Mobilizon lately.  It's basically a federated server designed for spreading calendar event information.  It's quite high on my list to support bidirectional support for this software.
 * There are lots of proprietary systems offering calendaring and/or task management, but without supporting standards very well.  I'm not keen on working with those systems, but I'd happily accept pull-request for supporting any of them.
 * There are many open source packages offering task management - like TaskWarrior.  It's worth looking into what can be supported.
 * There are tools like GitLab, Gitea and Request Tracker - they are neither calendaring systems nor task list managers, still they are frequently used like that.  My employer is using both GitLab and Request Tracker, I would love to interface with them to fetch out task lists and calendaring information.
+* TODO: research on what "OpenProject" is and if it may be a relevant backend.
 
 TODO: more research to be done.
 
