@@ -26,7 +26,7 @@ Today one may have to choose different libraries for fetching calendaring inform
 * There are lots of proprietary systems offering calendaring and/or task management, but without supporting standards very well.  I'm not keen on working with those systems, but I'd happily accept pull-request for supporting any of them.
 * There are many open source packages offering task management - like TaskWarrior.  It's worth looking into what can be supported.
 * There are tools like GitLab, Gitea and Request Tracker - they are neither calendaring systems nor task list managers, still they are frequently used like that.  My employer is using both GitLab and Request Tracker, I would love to interface with them to fetch out task lists and calendaring information.
-* TODO: research on what "OpenProject" is and if it may be a relevant backend.
+* TODO: research on what "OpenProject" is and if it may be a relevant backend.  (it looks a bit like some commercial solutions backed by heavy marketing investments slightly abusing the "open" keyword, abusing the .org domain space, and possibly just wanting to make quick money out of the EU digital sovereignity awakening,  but I may be very wrong - more research is certainly needed).
 
 TODO: more research to be done.
 
